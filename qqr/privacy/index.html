@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Privacy policy for QQR, a privacy-friendly QR scanner and generator for Chrome."
+      content="Privacy policy for QQR, a privacy-friendly QR scanner and generator with additional barcode tools."
     />
     <meta name="theme-color" content="#0f766e" />
     <title>QQR Privacy Policy</title>
@@ -35,10 +35,10 @@
           <p class="eyebrow">Your data stays yours</p>
           <h1>Privacy Policy</h1>
           <p class="intro">
-            QQR is a Chrome extension for scanning QR codes from webpages or local images and
-            creating QR code images. This policy explains how QQR handles information.
+            QQR is a Chrome extension for scanning and creating QR codes, with additional tools for
+            common linear barcodes. This policy explains how QQR handles information.
           </p>
-          <span class="updated">Effective August 3, 2026</span>
+          <span class="updated">Effective August 6, 2026</span>
         </div>
 
         <div class="content">
@@ -55,19 +55,20 @@
             <h2 id="information">Information QQR processes</h2>
             <p>QQR may process the following information only when you request the related feature:</p>
             <ul>
-              <li>The visible screenshot of the active browser tab when you start a QR scan.</li>
-              <li>The page region you select and the QR value decoded from it.</li>
-              <li>A PNG, JPEG, or WebP image you select for QR decoding.</li>
+              <li>The visible screenshot of the active tab when you start a QR or barcode scan.</li>
+              <li>The page region you select and the QR or barcode value decoded from it.</li>
+              <li>A PNG, JPEG, or WebP image you select for QR or barcode decoding.</li>
               <li>Text or URLs you enter to generate a QR code.</li>
               <li>Wi-Fi, contact, email, or SMS details you enter into a QR template.</li>
               <li>An optional PNG, JPEG, or WebP logo you select for a generated QR code.</li>
+              <li>Text or numbers you enter to generate a barcode.</li>
               <li>Your selected interface theme and language.</li>
             </ul>
             <p>
               Website screenshots are held temporarily in extension memory while a scan is in
               progress and are discarded after the selected area is processed or the tab is closed.
-              Selected images, QR values, generated PNG or SVG images, and logos are processed
-              locally and are not uploaded.
+              Selected images, QR or barcode values, generated PNG or SVG images, and logos are
+              processed locally and are not uploaded.
             </p>
             <p>
               A decoded value or generated image is written to the system clipboard only when you
@@ -82,7 +83,7 @@
             <p>
               QQR does not sell, rent, share, or transfer user data to third parties. It does not use
               user data for advertising, profiling, creditworthiness, lending, or purposes unrelated
-              to its QR scanning and generation features.
+              to its QR and barcode scanning and generation features.
             </p>
           </section>
 
@@ -91,17 +92,24 @@
             <p>QQR uses Chrome permissions only to provide its user-facing features:</p>
             <ul>
               <li><code>activeTab</code> temporarily accesses the visible tab after you start a scan.</li>
-              <li><code>scripting</code> displays the QR area-selection overlay after a scan is started.</li>
+              <li>
+                <code>scripting</code> displays the QR or barcode area-selection overlay after a scan
+                is started.
+              </li>
               <li>
                 <code>offscreen</code> provides local canvas image processing and clipboard operations
                 unavailable in a Manifest V3 service worker.
               </li>
-              <li><code>clipboardWrite</code> copies decoded QR text or generated images when requested.</li>
+              <li>
+                <code>clipboardWrite</code> copies decoded QR/barcode text or generated images when
+                requested.
+              </li>
               <li><code>storage</code> saves browser-local interface preferences.</li>
             </ul>
             <p>
               QQR does not request permanent access to all websites and does not use remote code. Its
-              QR processing libraries are included in the extension package.
+              QR and barcode processing libraries, including the WebAssembly decoder, are included
+              in the extension package and are never fetched remotely.
             </p>
           </section>
 
@@ -110,8 +118,9 @@
             <p>
               QQR's use of information received from Chrome APIs complies with the Chrome Web Store
               User Data Policy, including the Limited Use requirements. Information is used only to
-              provide or improve QQR's single-purpose QR features and is not transferred except where
-              required by law or necessary for security.
+              provide or improve QQR's single-purpose code scanning and generation features, led by
+              QR with additional barcode utilities, and is not transferred except where required by
+              law or necessary for security.
             </p>
           </section>
 
@@ -134,6 +143,6 @@
       </article>
     </main>
 
-    <footer class="site-footer shell">QQR processes QR content locally on your device.</footer>
+    <footer class="site-footer shell">QQR processes QR and barcode content locally on your device.</footer>
   </body>
 </html>

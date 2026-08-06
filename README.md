@@ -5,6 +5,7 @@ pxbao-itus.
 
 ## QQR
 
+- QR-first scanner and generator with additional local barcode tools.
 - Privacy policy: https://pxbao-itus.github.io/chrome-extension/qqr/privacy/
 - Chrome Web Store: https://chromewebstore.google.com/detail/qqr/maaehgdjdcdilfdpgicboihimbjkghkj
 - Support: https://github.com/pxbao-itus/chrome-extension/issues
