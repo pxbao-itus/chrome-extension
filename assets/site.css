@@ -210,6 +210,40 @@ code {
   margin-bottom: 0.4rem;
 }
 
+.extension-card--shopee {
+  --brand: #e9422a;
+  --brand-strong: #c83320;
+  --surface-muted: #fff1ec;
+  border-color: #ffd1c5;
+}
+
+.theme-shopee-assistant {
+  --background: #fff8f5;
+  --surface-muted: #fff0eb;
+  --border: #f1d8d0;
+  --brand: #e9422a;
+  --brand-strong: #c83320;
+  --shadow: 0 22px 60px rgb(130 46 28 / 10%);
+  background:
+    radial-gradient(circle at 12% 0%, rgb(244 81 50 / 13%), transparent 32rem),
+    var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-shopee-assistant {
+    --background: #170f0d;
+    --surface: #211714;
+    --surface-muted: #2d1c17;
+    --text: #fff5f1;
+    --muted: #d4b8af;
+    --border: #4b3028;
+    --brand: #ff775d;
+    --brand-strong: #ff9a86;
+    --brand-contrast: #2b0d07;
+    --shadow: 0 22px 60px rgb(0 0 0 / 28%);
+  }
+}
+
 .card-links {
   display: flex;
   flex-wrap: wrap;
