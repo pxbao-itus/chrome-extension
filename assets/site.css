@@ -217,6 +217,25 @@ code {
   border-color: #ffd1c5;
 }
 
+.extension-card--devutil {
+  --brand: #5b57e8;
+  --brand-strong: #4642c9;
+  --surface-muted: #f1f0ff;
+  border-color: #d9d7ff;
+}
+
+.theme-devutil {
+  --background: #f5f6fb;
+  --surface-muted: #f0f1ff;
+  --border: #dcdff0;
+  --brand: #5b57e8;
+  --brand-strong: #4642c9;
+  --shadow: 0 22px 60px rgb(69 65 180 / 11%);
+  background:
+    radial-gradient(circle at 12% 0%, rgb(91 87 232 / 14%), transparent 32rem),
+    var(--background);
+}
+
 .theme-shopee-assistant {
   --background: #fff8f5;
   --surface-muted: #fff0eb;
@@ -240,6 +259,19 @@ code {
     --brand: #ff775d;
     --brand-strong: #ff9a86;
     --brand-contrast: #2b0d07;
+    --shadow: 0 22px 60px rgb(0 0 0 / 28%);
+  }
+
+  .theme-devutil {
+    --background: #0d101b;
+    --surface: #151927;
+    --surface-muted: #1d2135;
+    --text: #f2f3ff;
+    --muted: #b6bbd0;
+    --border: #30364e;
+    --brand: #918cff;
+    --brand-strong: #b2aeff;
+    --brand-contrast: #111326;
     --shadow: 0 22px 60px rgb(0 0 0 / 28%);
   }
 }

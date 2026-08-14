@@ -3,6 +3,12 @@
 Public pages, privacy policies, and support links for Chrome extensions by
 pxbao-itus.
 
+## DevUtil
+
+- Local formatting, conversion, encoding, time, and generation utilities for developers.
+- Privacy policy: https://pxbao-itus.github.io/chrome-extension/devutil/privacy/
+- Support: https://github.com/pxbao-itus/chrome-extension/issues
+
 ## QQR
 
 - QR-first scanner and generator with additional local barcode tools.
