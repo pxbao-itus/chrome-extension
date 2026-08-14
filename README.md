@@ -12,7 +12,7 @@ pxbao-itus.
 
 ## Trợ Thủ Shopee
 
-- Local shopping history, spending, discount, and shipping statistics.
+- Local shopping-history statistics plus on-demand product/shop lookup and comparison.
 - Privacy policy: https://pxbao-itus.github.io/chrome-extension/shopee-assistant/privacy/
 - Support: https://github.com/pxbao-itus/chrome-extension/issues
 

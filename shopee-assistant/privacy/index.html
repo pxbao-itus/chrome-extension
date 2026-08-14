@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Chính sách quyền riêng tư của Trợ Thủ Shopee, extension thống kê lịch sử mua hàng cục bộ trên thiết bị."
+      content="Chính sách quyền riêng tư của Trợ Thủ Shopee 0.2.0: thống kê mua hàng, tra cứu và so sánh sản phẩm trên thiết bị."
     />
     <meta name="theme-color" content="#f45132" />
     <title>Chính sách quyền riêng tư — Trợ Thủ Shopee</title>
@@ -34,20 +34,20 @@
           <p class="eyebrow">Dữ liệu của bạn được xử lý trên thiết bị</p>
           <h1>Chính sách quyền riêng tư</h1>
           <p class="intro">
-            Trợ Thủ Shopee là extension Chrome giúp người dùng tổng hợp và trực quan hóa lịch sử
-            mua hàng của chính mình. Chính sách này giải thích dữ liệu extension xử lý và cách dữ
-            liệu được bảo vệ.
+            Trợ Thủ Shopee là extension Chrome giúp người dùng thống kê lịch sử mua hàng và chủ
+            động tra cứu, so sánh dữ liệu sản phẩm trên Shopee. Chính sách này giải thích dữ liệu
+            extension xử lý, mục đích sử dụng và cách người dùng kiểm soát dữ liệu.
           </p>
-          <span class="updated">Có hiệu lực từ ngày 07/08/2026</span>
+          <span class="updated">Có hiệu lực từ ngày 14/08/2026 · Áp dụng cho phiên bản 0.2.0</span>
         </div>
 
         <div class="content">
           <section aria-labelledby="summary">
             <h2 id="summary">Tóm tắt</h2>
             <p class="summary">
-              Phiên bản hiện tại xử lý lịch sử đơn hàng cục bộ trên thiết bị. Extension không gửi
-              dữ liệu mua hàng tới nhà phát triển hoặc bên thứ ba, không bán dữ liệu và không sử
-              dụng analytics hay dịch vụ theo dõi.
+              Dữ liệu được xử lý và lưu cục bộ trên thiết bị. Phiên bản 0.2.0 không có máy chủ xử
+              lý dữ liệu của nhà phát triển, analytics, quảng cáo hoặc SDK theo dõi. Extension chỉ
+              tải dữ liệu sau khi người dùng đồng ý với disclosure và chủ động dùng một tính năng.
             </p>
           </section>
 
@@ -57,14 +57,19 @@
               Khi người dùng chủ động tải thống kê, extension xử lý các thông tin Shopee trả về:
             </p>
             <ul>
-              <li>Mã đơn hàng, tên shop và trạng thái đơn.</li>
+              <li>Mã đơn, tên shop, tên và mã sản phẩm, số lượng và trạng thái đơn.</li>
               <li>Thời gian đặt hàng và các mốc cập nhật trong vòng đời đơn.</li>
-              <li>Giá trị đơn, giảm giá, phí vận chuyển và phí vận chuyển được giảm.</li>
+              <li>Giá đã trả, giá trị đơn, giảm giá, phí vận chuyển và phí vận chuyển được giảm.</li>
             </ul>
             <p>
+              Khi người dùng chủ động tra cứu hoặc so sánh, extension xử lý dữ liệu công khai của
+              sản phẩm/shop đã chọn: tên và mã sản phẩm, URL, giá, mức giảm, lượt mua, thông tin
+              shop, phân bố đánh giá, bình luận, phân loại, thời gian đánh giá và ảnh/video đính kèm.
+            </p>
+            <p>
               Extension không đọc hoặc lưu mật khẩu, số thẻ, số tài khoản ngân hàng hay giá trị
-              cookie xác thực. Request chỉ sử dụng phiên Shopee mà người dùng đã đăng nhập trong
-              trình duyệt.
+              cookie xác thực. Request sử dụng phiên Shopee đang đăng nhập nhưng extension không
+              trích xuất hoặc lưu thông tin xác thực đó.
             </p>
           </section>
 
@@ -72,9 +77,11 @@
             <h2 id="purpose">Mục đích sử dụng</h2>
             <p>Dữ liệu chỉ được dùng để cung cấp các tính năng người dùng yêu cầu:</p>
             <ul>
-              <li>Tính tổng chi tiêu, số đơn, giảm giá và phí vận chuyển.</li>
-              <li>Hiển thị danh sách đơn gần đây và mở trang chi tiết đơn trên Shopee.</li>
+              <li>Tính tổng chi tiêu, số đơn, giảm giá, phí vận chuyển và tạo ảnh tổng kết.</li>
+              <li>Hiển thị, tìm kiếm danh sách đơn và mở trang chi tiết đơn trên Shopee.</li>
               <li>Tạo biểu đồ mua sắm theo tuần, tháng, shop và giá trị đơn.</li>
+              <li>Tra cứu độ tin cậy shop, giá, phân loại và đánh giá sản phẩm.</li>
+              <li>So sánh hai sản phẩm và đối chiếu với lịch sử mua cục bộ.</li>
               <li>Duy trì tiến độ tác vụ khi bảng extension tạm thời bị đóng.</li>
             </ul>
           </section>
@@ -82,34 +89,41 @@
           <section aria-labelledby="storage">
             <h2 id="storage">Lưu trữ và truyền dữ liệu</h2>
             <p>
-              Dữ liệu thống kê và tiến độ tác vụ được lưu bằng <code>chrome.storage.local</code>
-              trên thiết bị. Cache được coi là mới trong 30 phút; dữ liệu cũ có thể còn trên thiết
-              bị cho tới khi bị ghi đè, người dùng xóa dữ liệu extension hoặc gỡ extension.
+              Kết quả thống kê, dữ liệu đơn đã tải, lựa chọn giao diện, màn hình đang xem, phiên bản
+              consent và tiến độ tác vụ được lưu bằng <code>chrome.storage.local</code> trên thiết
+              bị. Cache được coi là mới trong 30 phút; dữ liệu cũ có thể còn trên thiết bị cho tới
+              khi bị ghi đè, người dùng xóa dữ liệu extension hoặc gỡ extension.
             </p>
             <p>
-              Request lịch sử đơn hàng được gửi trực tiếp giữa trình duyệt và
-              <code>shopee.vn</code> qua HTTPS. Phiên bản hiện tại không có backend xử lý lịch sử
-              mua hàng và không truyền dữ liệu đó tới máy chủ của nhà phát triển.
+              API request được gửi trực tiếp giữa trình duyệt và <code>shopee.vn</code> qua HTTPS.
+              Ảnh/video đánh giá được tải qua HTTPS từ CDN của Shopee
+              (<code>*.susercontent.com</code>) để hiển thị. Dữ liệu lịch sử mua hàng và kết quả
+              phân tích không được gửi tới máy chủ của nhà phát triển hay dịch vụ analytics.
+            </p>
+            <p>
+              Ảnh tổng kết được render cục bộ và chỉ được tải xuống hoặc ghi vào clipboard khi
+              người dùng bấm nút tương ứng.
             </p>
           </section>
 
           <section aria-labelledby="sharing">
             <h2 id="sharing">Chia sẻ và bán dữ liệu</h2>
             <p>
-              Nhà phát triển không bán, cho thuê hoặc chia sẻ dữ liệu người dùng. Dữ liệu không
-              được sử dụng cho quảng cáo, profiling, đánh giá tín dụng, theo dõi giữa các website
-              hoặc mục đích không liên quan đến thống kê mua hàng.
+              Nhà phát triển không bán, cho thuê hoặc dùng dữ liệu người dùng cho quảng cáo,
+              profiling, đánh giá tín dụng, theo dõi giữa các website hoặc mục đích không liên
+              quan. Không có nhân sự của nhà phát triển đọc lịch sử mua hàng, dữ liệu tài chính
+              hoặc kết quả tra cứu của người dùng trong phiên bản hiện tại.
             </p>
           </section>
 
           <section aria-labelledby="permissions">
             <h2 id="permissions">Quyền Chrome được sử dụng</h2>
             <ul>
-              <li><code>storage</code> lưu cache, lựa chọn giao diện và tiến độ tác vụ cục bộ.</li>
+              <li><code>storage</code> lưu consent, cache, lựa chọn giao diện và tiến độ tác vụ cục bộ.</li>
               <li><code>scripting</code> mở dock và thực hiện request trong tab Shopee đã đăng nhập.</li>
               <li><code>offscreen</code> giúp tác vụ do người dùng bắt đầu tiếp tục khi dock đóng.</li>
               <li><code>tabs</code> tìm và gửi lệnh tới một tab <code>shopee.vn</code> đang mở.</li>
-              <li>Quyền host Shopee dùng để hiển thị dock và đọc dữ liệu đơn hàng theo yêu cầu.</li>
+              <li>Quyền host Shopee dùng để hiển thị dock và gọi dữ liệu cần cho thống kê, tra cứu và so sánh.</li>
             </ul>
             <p>Extension không chạy trên website ngoài các tên miền Shopee đã khai báo.</p>
           </section>
@@ -117,8 +131,14 @@
           <section aria-labelledby="control">
             <h2 id="control">Quyền kiểm soát của người dùng</h2>
             <p>
-              Người dùng có thể dừng tác vụ đang chạy trong giao diện. Có thể xóa toàn bộ dữ liệu
-              đã lưu bằng cách xóa dữ liệu extension trong Chrome hoặc gỡ extension.
+              Trước lần xử lý dữ liệu đầu tiên của disclosure 0.2.0, extension hiển thị các nhóm dữ
+              liệu, mục đích, cách lưu trữ và request media. Chỉ khi người dùng bấm “Tôi đồng ý và
+              tiếp tục”, consent mới được lưu cục bộ. Nếu chưa đồng ý, extension không tải dữ liệu
+              đơn hoặc dữ liệu sản phẩm.
+            </p>
+            <p>
+              Người dùng có thể dừng tác vụ đang chạy. Có thể xóa cache và consent bằng cách xóa dữ
+              liệu extension trong Chrome hoặc gỡ extension; lần dùng tiếp theo sẽ yêu cầu đồng ý lại.
             </p>
           </section>
 
@@ -127,17 +147,18 @@
             <p>
               Việc sử dụng thông tin nhận được từ Chrome APIs tuân thủ Chrome Web Store User Data
               Policy, bao gồm các yêu cầu Limited Use. Thông tin chỉ được dùng để cung cấp hoặc cải
-              thiện mục đích duy nhất đã công bố của extension và không được chuyển giao ngoài các
-              trường hợp pháp luật hoặc bảo mật bắt buộc.
+              thiện mục đích duy nhất đã công bố của extension. Dữ liệu không được dùng hoặc chuyển
+              giao cho quảng cáo cá nhân hóa, data broker, đánh giá tín dụng hay mục đích không liên quan.
             </p>
           </section>
 
           <section aria-labelledby="changes">
             <h2 id="changes">Thay đổi chính sách</h2>
             <p>
-              Nếu extension bổ sung backend, tài khoản, subscription, analytics hoặc thay đổi cách
-              xử lý dữ liệu, chính sách và disclosure trong sản phẩm sẽ được cập nhật trước khi cách
-              xử lý mới có hiệu lực. Ngày hiệu lực mới sẽ được hiển thị tại trang này.
+              Nếu extension thay đổi loại dữ liệu, mục đích, bên nhận, thời hạn lưu trữ hoặc bổ sung
+              backend, tài khoản, subscription, analytics hay crash reporting, chính sách, Dashboard
+              disclosure và disclosure trong sản phẩm sẽ được cập nhật trước khi cách xử lý mới có
+              hiệu lực. Thay đổi trọng yếu sẽ yêu cầu người dùng xác nhận lại.
             </p>
           </section>
 
@@ -163,7 +184,7 @@
     </main>
 
     <footer class="site-footer shell">
-      Trợ Thủ Shopee xử lý lịch sử mua hàng cục bộ trên thiết bị của người dùng.
+      Trợ Thủ Shopee 0.2.0 xử lý thống kê, tra cứu và so sánh cục bộ trên thiết bị.
     </footer>
   </body>
 </html>
