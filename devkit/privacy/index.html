@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Privacy policy for DevKit 0.1.0, a local-first web and API debugging workspace for Chrome."
+    />
+    <meta name="theme-color" content="#0788e8" />
+    <title>DevKit Privacy Policy</title>
+    <link rel="stylesheet" href="../../assets/site.css" />
+  </head>
+  <body class="theme-devkit">
+    <header class="site-header shell">
+      <a class="brand" href="../../" aria-label="Extension pages home">
+        <span class="logo" aria-hidden="true">DK</span>
+        DevKit
+      </a>
+      <a
+        class="pill-link"
+        href="https://github.com/pxbao-itus/chrome-extension/issues"
+      >
+        Support
+      </a>
+    </header>
+
+    <main class="shell">
+      <article class="page-card">
+        <div class="hero">
+          <p class="eyebrow">Your debugging data stays on your device</p>
+          <h1>Privacy Policy</h1>
+          <p class="intro">
+            DevKit is a Chrome extension for capturing, inspecting, replaying,
+            comparing, and organizing web/API traffic. This policy explains how
+            DevKit handles data.
+          </p>
+          <span class="updated"
+            >Effective August 14, 2026 · Applies to version 0.1.0</span
+          >
+        </div>
+
+        <div class="content">
+          <section aria-labelledby="summary">
+            <h2 id="summary">Summary</h2>
+            <p class="summary">
+              DevKit processes captured traffic and workspace data locally in
+              Chrome. It has no developer-operated backend and does not transmit
+              captured data, analytics, telemetry, or identifiers to the
+              developer or third parties.
+            </p>
+          </section>
+
+          <section aria-labelledby="captured-data">
+            <h2 id="captured-data">Data DevKit processes</h2>
+            <p>
+              DevKit starts capture only after you press
+              <strong>Record</strong> in a browser tab. While recording that
+              tab, DevKit may process request URLs, methods, timing, headers,
+              query parameters, request bodies, response headers, response
+              bodies, WebSocket frames, and Server-Sent Events. This traffic may
+              contain personal or sensitive information supplied by the sites
+              and APIs you choose to debug.
+            </p>
+            <p>
+              DevKit does not monitor unrelated tabs. Each tab has an
+              independent recording state and capture session.
+            </p>
+          </section>
+
+          <section aria-labelledby="storage">
+            <h2 id="storage">Local storage and retention</h2>
+            <p>
+              DevKit uses <code>chrome.storage.local</code> to retain bounded,
+              tab-specific capture sessions and reusable workspace data on your
+              device. Workspace data may include saved request templates,
+              collections, environments and variables, assertions, scenarios,
+              mock/interception rules, Proto schemas, baselines, and
+              preferences.
+            </p>
+            <p>
+              You can delete a tab's captured traffic with
+              <strong>Clear session</strong>. Closing the tab deletes its stored
+              capture session. Workspace data remains until you remove it, clear
+              extension-local storage, or uninstall DevKit. DevKit does not
+              provide cloud history or synchronization.
+            </p>
+          </section>
+
+          <section aria-labelledby="transmission">
+            <h2 id="transmission">Replay and data transmission</h2>
+            <p>
+              DevKit does not send captured traffic or workspace data to the
+              developer. When you explicitly replay a request, DevKit sends the
+              request you reviewed or edited directly from Chrome to the
+              selected HTTP or HTTPS target origin. DevKit requests optional
+              access to that origin at send time. The target server's own
+              privacy practices apply to the replayed request.
+            </p>
+          </section>
+
+          <section aria-labelledby="permissions">
+            <h2 id="permissions">Chrome permissions</h2>
+            <ul>
+              <li>
+                <code>sidePanel</code> displays the DevKit workspace beside the
+                selected tab.
+              </li>
+              <li>
+                <code>storage</code> retains bounded local sessions, workspace
+                data, recording state, and preferences.
+              </li>
+              <li>
+                <code>debugger</code> attaches only after you press Record in a
+                tab. It lets DevKit inspect that tab's network traffic and
+                response bodies without requiring Chrome DevTools to be open.
+                Chrome displays a debugging indicator while attached.
+              </li>
+              <li>
+                Optional HTTP/HTTPS host access is requested only when you
+                choose to replay a request to a specific origin.
+              </li>
+            </ul>
+            <p>
+              DevKit does not request browser history, cookies, privileged tab
+              metadata, or global background traffic access through
+              <code>webRequest</code>.
+            </p>
+          </section>
+
+          <section aria-labelledby="sharing">
+            <h2 id="sharing">Data sharing and sale</h2>
+            <p>
+              DevKit does not sell, rent, share, or use captured data for
+              advertising, creditworthiness, analytics, profiling, or purposes
+              unrelated to its web/API debugging functionality. No human at the
+              developer can access locally captured data through DevKit.
+            </p>
+          </section>
+
+          <section aria-labelledby="security">
+            <h2 id="security">Security and privacy controls</h2>
+            <p>
+              Recording is off by default. Sensitive headers are masked by
+              default, request and response bodies are size-limited, and the
+              number of retained requests and stream messages is bounded. DevKit
+              does not use analytics, advertising, telemetry, tracking
+              technologies, or remote executable code.
+            </p>
+          </section>
+
+          <section aria-labelledby="limited-use">
+            <h2 id="limited-use">Limited Use</h2>
+            <p>
+              DevKit's use of information received from Chrome APIs complies
+              with the Chrome Web Store User Data Policy, including the Limited
+              Use requirements. Information is used only to provide or improve
+              the user-facing debugging features described above and is not
+              transferred except where required by law or necessary for
+              security.
+            </p>
+          </section>
+
+          <section aria-labelledby="changes">
+            <h2 id="changes">Changes to this policy</h2>
+            <p>
+              This policy may be updated when DevKit's functionality or legal
+              obligations change. The revised policy will be published on this
+              page with a new effective date and the applicable extension
+              version.
+            </p>
+          </section>
+
+          <section aria-labelledby="contact">
+            <h2 id="contact">Contact</h2>
+            <p>
+              For privacy questions, support, or deletion requests, open an
+              issue in the
+              <a href="https://github.com/pxbao-itus/chrome-extension/issues"
+                >public support tracker</a
+              >.
+            </p>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer shell">
+      DevKit keeps captured web/API debugging data on your device.
+    </footer>
+  </body>
+</html>

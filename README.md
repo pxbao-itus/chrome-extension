@@ -3,6 +3,12 @@
 Public pages, privacy policies, and support links for Chrome extensions by
 pxbao-itus.
 
+## DevKit
+
+- Local web/API capture, inspection, replay, comparison, and reusable debugging workspace.
+- Privacy policy: https://pxbao-itus.github.io/chrome-extension/devkit/privacy/
+- Support: https://github.com/pxbao-itus/chrome-extension/issues
+
 ## DevUtil
 
 - Local formatting, conversion, encoding, time, and generation utilities for developers.
