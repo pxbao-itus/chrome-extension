@@ -3,7 +3,7 @@
 Public pages, privacy policies, and support links for Chrome extensions by
 pxbao-itus.
 
-## DevKit
+## DevKit – API Debugger & Network Inspector
 
 - Local web/API capture, inspection, replay, comparison, and reusable debugging workspace.
 - Privacy policy: https://pxbao-itus.github.io/chrome-extension/devkit/privacy/
