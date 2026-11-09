@@ -38,7 +38,7 @@
             QQR is a Chrome extension for scanning and creating QR codes, with additional tools for
             common linear barcodes. This policy explains how QQR handles information.
           </p>
-          <span class="updated">Effective August 6, 2026</span>
+          <span class="updated">Effective November 9, 2026</span>
         </div>
 
         <div class="content">
@@ -57,12 +57,34 @@
             <ul>
               <li>The visible screenshot of the active tab when you start a QR or barcode scan.</li>
               <li>The page region you select and the QR or barcode value decoded from it.</li>
-              <li>A PNG, JPEG, or WebP image you select for QR or barcode decoding.</li>
+              <li>A PNG, JPEG, or WebP image you select, paste, or drop for QR or barcode decoding.</li>
+              <li>
+                Webcam video, only after you start camera scanning in the workspace and allow camera
+                access. Frames are decoded in memory and discarded immediately; video is never
+                recorded, stored, or uploaded.
+              </li>
+              <li>A list of values or a CSV file you provide for bulk QR creation.</li>
               <li>Text or URLs you enter to generate a QR code.</li>
-              <li>Wi-Fi, contact, email, or SMS details you enter into a QR template.</li>
+              <li>
+                Wi-Fi, contact, email, SMS, phone, calendar, location, WhatsApp, or VietQR bank
+                transfer details you enter into a QR template. Bank details are never looked up
+                online.
+              </li>
               <li>An optional PNG, JPEG, or WebP logo you select for a generated QR code.</li>
               <li>Text or numbers you enter to generate a barcode.</li>
-              <li>Your selected interface theme and language.</li>
+              <li>Your selected interface theme and language, and QR style settings.</li>
+              <li>
+                Optional local history of ordinary text and web links, only if you turn it on.
+                Wi-Fi, contact, payment, and authentication content is never saved.
+              </li>
+              <li>
+                Saved QR styles, only when you save one. A style can include a small copy of your
+                logo only if you choose to include it.
+              </li>
+              <li>
+                A local count of successful scans and exports, used only to show a one-time
+                invitation to rate QQR.
+              </li>
             </ul>
             <p>
               Website screenshots are held temporarily in extension memory while a scan is in
@@ -75,6 +97,16 @@
               request it. Your theme and language are saved in browser-local extension storage so
               they persist between sessions. You can remove these preferences by clearing extension
               data or uninstalling QQR.
+            </p>
+          </section>
+
+          <section aria-labelledby="pages">
+            <h2 id="pages">Pages QQR opens</h2>
+            <p>
+              QQR opens a welcome page bundled inside the extension when it is installed. When QQR
+              is removed, Chrome opens a public help page on this site. QQR attaches no
+              identifiers, settings, or usage information to that address. The Chrome Web Store
+              review page opens only if you click the rating button.
             </p>
           </section>
 
@@ -105,6 +137,14 @@
                 requested.
               </li>
               <li><code>storage</code> saves browser-local interface preferences.</li>
+              <li>
+                <code>contextMenus</code> adds right-click actions to scan a visual or create a QR
+                code from the current page, a link, or selected text.
+              </li>
+              <li>
+                <code>sidePanel</code> lets you open QQR's interface in the browser side panel. It
+                does not grant access to page content.
+              </li>
             </ul>
             <p>
               QQR does not request permanent access to all websites and does not use remote code. Its
