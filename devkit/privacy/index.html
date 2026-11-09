@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Privacy policy for DevKit – API Debugger & Network Inspector 0.1.0, a local-first web and API debugging workspace."
+      content="Privacy policy for DevKit – API Debugger & Network Inspector 0.2.0, a local-first web and API debugging workspace."
     />
     <meta name="theme-color" content="#0788e8" />
     <title>DevKit – API Debugger &amp; Network Inspector Privacy Policy</title>
@@ -32,12 +32,12 @@
           <h1>Privacy Policy</h1>
           <p class="intro">
             DevKit – API Debugger &amp; Network Inspector ("DevKit") is a Chrome
-            extension for capturing, inspecting, replaying, mocking, comparing,
+            extension for capturing, inspecting, editing, sending, comparing,
             and organizing web/API traffic. This policy explains how DevKit
             handles data.
           </p>
           <span class="updated"
-            >Effective August 14, 2026 · Applies to version 0.1.0</span
+            >Effective November 9, 2026 · Applies to version 0.2.0</span
           >
         </div>
 
@@ -47,8 +47,8 @@
             <p class="summary">
               DevKit processes captured traffic and workspace data locally in
               Chrome. It has no developer-operated backend and does not transmit
-              captured data, analytics, telemetry, or identifiers to the
-              developer or third parties.
+              captured data, workspace data, analytics, telemetry, or
+              identifiers to the developer or third parties.
             </p>
           </section>
 
@@ -60,9 +60,23 @@
               tab, DevKit may process request URLs, methods, timing, headers,
               query parameters, request bodies, response headers, response
               bodies, WebSocket frames, and Server-Sent Events. This traffic may
-              contain personal or sensitive information supplied by the sites
-              and APIs you choose to debug.
+              contain personal or sensitive information, including
+              authentication headers and cookies, supplied by the sites and APIs
+              you choose to debug.
             </p>
+            <p>While a tab is recording, DevKit may also:</p>
+            <ul>
+              <li>
+                block, delay, mock, or modify that tab's matching traffic, but
+                only according to rules you have enabled; and
+              </li>
+              <li>
+                add a small script to the tab that keeps a reference to each
+                WebSocket the page opens, so that a frame you type can be sent
+                through the page's own connection. The script does not read page
+                content, change the DOM, or send anything on its own.
+              </li>
+            </ul>
             <p>
               DevKit does not monitor unrelated tabs. Each tab has an
               independent recording state and capture session.
@@ -74,10 +88,22 @@
             <p>
               DevKit uses <code>chrome.storage.local</code> to retain bounded,
               tab-specific capture sessions and reusable workspace data on your
-              device. Workspace data may include saved request templates,
-              collections, environments and variables, assertions, scenarios,
-              mock/interception rules, Proto schemas, baselines, and
-              preferences.
+              device. Workspace data may include saved requests and collections,
+              environments and variables, authentication values you enter
+              (bearer tokens, basic-auth usernames and passwords, API keys),
+              files attached to multipart bodies, Proto schemas, assertions,
+              baselines, scenarios, mock and interception rules, the history of
+              the last runs of each saved request including the responses
+              received, and preferences.
+            </p>
+            <p>
+              Values marked as secret are masked on screen, but they are stored
+              in local extension storage like other workspace data, because
+              DevKit needs them to send requests. Files you import (cURL
+              commands, Postman collections, <code>.proto</code> files, JSON
+              exports) are read locally, and exports are saved only where you
+              choose. An exported workspace leaves out secret variable values
+              unless you choose to include them.
             </p>
             <p>
               You can delete a tab's captured traffic with
@@ -89,14 +115,16 @@
           </section>
 
           <section aria-labelledby="transmission">
-            <h2 id="transmission">Replay and data transmission</h2>
+            <h2 id="transmission">Sending and data transmission</h2>
             <p>
               DevKit does not send captured traffic or workspace data to the
-              developer. When you explicitly replay a request, DevKit sends the
-              request you reviewed or edited directly from Chrome to the
-              selected HTTP or HTTPS target origin. DevKit requests optional
-              access to that origin at send time. The target server's own
-              privacy practices apply to the replayed request.
+              developer. When you explicitly send a request, DevKit sends the
+              request you reviewed or edited, including any authentication
+              values you attached to it, directly from Chrome to the selected
+              HTTP or HTTPS target origin. DevKit requests optional access to
+              that origin at send time. When you send a WebSocket frame, it goes
+              through the connection the page already has open. The target
+              server's own privacy practices apply to that traffic.
             </p>
           </section>
 
@@ -113,13 +141,14 @@
               </li>
               <li>
                 <code>debugger</code> attaches only after you press Record in a
-                tab. It lets DevKit inspect that tab's network traffic and
-                response bodies without requiring Chrome DevTools to be open.
-                Chrome displays a debugging indicator while attached.
+                tab. It lets DevKit read that tab's network traffic and response
+                bodies without requiring Chrome DevTools to be open, apply
+                interception rules you have enabled, and send WebSocket frames
+                you type. Chrome displays a debugging indicator while attached.
               </li>
               <li>
                 Optional HTTP/HTTPS host access is requested only when you
-                choose to replay a request to a specific origin.
+                choose to send a request to a specific origin.
               </li>
             </ul>
             <p>
@@ -132,10 +161,10 @@
           <section aria-labelledby="sharing">
             <h2 id="sharing">Data sharing and sale</h2>
             <p>
-              DevKit does not sell, rent, share, or use captured data for
-              advertising, creditworthiness, analytics, profiling, or purposes
-              unrelated to its web/API debugging functionality. No human at the
-              developer can access locally captured data through DevKit.
+              DevKit does not sell, rent, share, or use captured or stored data
+              for advertising, creditworthiness, analytics, profiling, or
+              purposes unrelated to its web/API debugging functionality. No
+              human at the developer can access data processed by DevKit.
             </p>
           </section>
 
