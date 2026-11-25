@@ -36,7 +36,9 @@
           <h1>Privacy Policy</h1>
           <p class="intro">
             QQR is a Chrome extension for scanning and creating QR codes, with additional tools for
-            common linear barcodes. This policy explains how QQR handles information.
+            common linear barcodes. It can also keep the one-time codes for your two-factor
+            authentication (2FA) accounts in an encrypted vault on your device. This policy
+            explains how QQR handles information.
           </p>
           <span class="updated">Effective November 9, 2026</span>
         </div>
@@ -72,10 +74,20 @@
               </li>
               <li>An optional PNG, JPEG, or WebP logo you select for a generated QR code.</li>
               <li>Text or numbers you enter to generate a barcode.</li>
+              <li>
+                For the 2FA tab: a password you choose, and the 2FA account details you add (service
+                name, account name, setup key, and code settings), from a QR scan, a setup key you
+                type, or a Google Authenticator "Transfer accounts" QR code. They are kept only in
+                the encrypted vault described under "2FA codes" below.
+              </li>
+              <li>
+                The last popup tab you used, and your 2FA auto-lock choice, so QQR can reopen where
+                you left off.
+              </li>
               <li>Your selected interface theme and language, and QR style settings.</li>
               <li>
                 Optional local history of ordinary text and web links, only if you turn it on.
-                Wi-Fi, contact, payment, and authentication content is never saved.
+                Wi-Fi, contact, payment, authentication, and 2FA setup code content is never saved.
               </li>
               <li>
                 Saved QR styles, only when you save one. A style can include a small copy of your
@@ -90,7 +102,10 @@
               Website screenshots are held temporarily in extension memory while a scan is in
               progress and are discarded after the selected area is processed or the tab is closed.
               Selected images, QR or barcode values, generated PNG or SVG images, and logos are
-              processed locally and are not uploaded.
+              processed locally and are not uploaded. When a context-menu action is used, or when a
+              page-area scan finds a 2FA setup code, QQR keeps the selected value or scan result in
+              Chrome's in-memory extension session storage only long enough to open the toolbar
+              popup, then removes it.
             </p>
             <p>
               A decoded value or generated image is written to the system clipboard only when you
@@ -98,6 +113,57 @@
               they persist between sessions. You can remove these preferences by clearing extension
               data or uninstalling QQR.
             </p>
+          </section>
+
+          <section aria-labelledby="twofa">
+            <h2 id="twofa">2FA codes</h2>
+            <p>
+              The 2FA tab is optional. Nothing is stored for it until you choose a password and turn
+              it on.
+            </p>
+            <ul>
+              <li>
+                <strong>Encrypted vault.</strong> Your accounts are stored in browser-local extension
+                storage as an encrypted vault. QQR protects them with a random data key. That key is
+                itself encrypted with a key derived from your password (PBKDF2-SHA256 with 600,000
+                iterations), and the accounts are encrypted with AES-256-GCM. Setup keys are not
+                stored in plain text anywhere.
+              </li>
+              <li>
+                <strong>Password.</strong> The password is required and is never stored or sent
+                anywhere. QQR cannot recover it. If you forget it, the only way forward is to erase
+                the vault and start over, or to import a backup file.
+              </li>
+              <li>
+                <strong>Unlocked key in memory only.</strong> After you unlock the vault, the data
+                key is held only in Chrome's in-memory extension session storage so your codes can
+                be shown without asking again. It is removed when you choose "Lock now", when the
+                auto-lock time you selected runs out (15 minutes, 1 hour, 1 day, 7 days, or when
+                Chrome closes; 7 days is the default), and whenever Chrome closes. It is never
+                written to disk.
+              </li>
+              <li>
+                <strong>Nothing synced or transmitted.</strong> The vault is not synced between
+                devices and is never sent to the developer, a third party, or any server. QQR makes
+                no network request for 2FA codes, and one-time codes are calculated on your device.
+              </li>
+              <li>
+                <strong>Backups.</strong> You can export your accounts to an encrypted
+                <code>.qqr2fa</code> file, protected with your current 2FA password or with a
+                separate password chosen for that file, and import such a file later. The file is
+                saved only where you choose; QQR does not upload it.
+              </li>
+              <li>
+                <strong>Scans never expose 2FA setup codes.</strong> When a scan finds a 2FA setup
+                code, QQR does not copy it to the clipboard automatically, does not offer to copy it
+                from the scan result, does not save it to history, and does not show it inside the
+                web page being scanned. A code in the 2FA tab is copied only when you click it.
+              </li>
+              <li>
+                <strong>Removal.</strong> You can delete an account, erase every 2FA account from the
+                tab, or clear all extension data or uninstall QQR to remove the vault.
+              </li>
+            </ul>
           </section>
 
           <section aria-labelledby="pages">
@@ -115,7 +181,7 @@
             <p>
               QQR does not sell, rent, share, or transfer user data to third parties. It does not use
               user data for advertising, profiling, creditworthiness, lending, or purposes unrelated
-              to its QR and barcode scanning and generation features.
+              to its QR and barcode scanning and generation features or its on-device 2FA code feature.
             </p>
           </section>
 
@@ -133,10 +199,13 @@
                 unavailable in a Manifest V3 service worker.
               </li>
               <li>
-                <code>clipboardWrite</code> copies decoded QR/barcode text or generated images when
-                requested.
+                <code>clipboardWrite</code> copies decoded QR/barcode text, generated images, or a 2FA
+                code when requested.
               </li>
-              <li><code>storage</code> saves browser-local interface preferences.</li>
+              <li>
+                <code>storage</code> saves browser-local interface preferences, the encrypted 2FA
+                vault, and a memory-only session key while the vault is unlocked.
+              </li>
               <li>
                 <code>contextMenus</code> adds right-click actions to scan a visual or create a QR
                 code from the current page, a link, or selected text.
@@ -159,7 +228,7 @@
               QQR's use of information received from Chrome APIs complies with the Chrome Web Store
               User Data Policy, including the Limited Use requirements. Information is used only to
               provide or improve QQR's single-purpose code scanning and generation features, led by
-              QR with additional barcode utilities, and is not transferred except where required by
+              QR with additional barcode utilities and 2FA setup codes kept on your device, and is not transferred except where required by
               law or necessary for security.
             </p>
           </section>
@@ -183,6 +252,6 @@
       </article>
     </main>
 
-    <footer class="site-footer shell">QQR processes QR and barcode content locally on your device.</footer>
+    <footer class="site-footer shell">QQR processes QR and barcode content, and keeps 2FA codes, locally on your device.</footer>
   </body>
 </html>
