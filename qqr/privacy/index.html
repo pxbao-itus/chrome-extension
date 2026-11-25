@@ -105,7 +105,8 @@
               processed locally and are not uploaded. When a context-menu action is used, or when a
               page-area scan finds a 2FA setup code, QQR keeps the selected value or scan result in
               Chrome's in-memory extension session storage only long enough to open the toolbar
-              popup, then removes it.
+              popup, then removes it. A 2FA setup link handed over this way stays only in that
+              memory-only storage until it is read or Chrome closes.
             </p>
             <p>
               A decoded value or generated image is written to the system clipboard only when you
@@ -126,21 +127,21 @@
                 <strong>Encrypted vault.</strong> Your accounts are stored in browser-local extension
                 storage as an encrypted vault. QQR protects them with a random data key. That key is
                 itself encrypted with a key derived from your password (PBKDF2-SHA256 with 600,000
-                iterations), and the accounts are encrypted with AES-256-GCM. Setup keys are not
-                stored in plain text anywhere.
+                iterations), and the accounts are encrypted with AES-256-GCM. Setup keys are never
+                written to disk in plain text.
               </li>
               <li>
                 <strong>Password.</strong> The password is required and is never stored or sent
                 anywhere. QQR cannot recover it. If you forget it, the only way forward is to erase
-                the vault and start over, or to import a backup file.
+                the vault and start over, or to import a backup file whose password you remember.
               </li>
               <li>
                 <strong>Unlocked key in memory only.</strong> After you unlock the vault, the data
                 key is held only in Chrome's in-memory extension session storage so your codes can
-                be shown without asking again. It is removed when you choose "Lock now", when the
-                auto-lock time you selected runs out (15 minutes, 1 hour, 1 day, 7 days, or when
-                Chrome closes; 7 days is the default), and whenever Chrome closes. It is never
-                written to disk.
+                be shown without asking again. It is removed when you choose "Lock now". After the
+                auto-lock time you selected (15 minutes, 1 hour, 1 day, 7 days, or when Chrome
+                closes; 7 days is the default) it stops working and is discarded the next time QQR
+                is used, or when Chrome closes. It is never written to disk.
               </li>
               <li>
                 <strong>Nothing synced or transmitted.</strong> The vault is not synced between
