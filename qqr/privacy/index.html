@@ -136,6 +136,17 @@
                 the vault and start over, or to import a backup file whose password you remember.
               </li>
               <li>
+                <strong>Optional Touch ID or Windows Hello unlock.</strong> Where your browser
+                supports it, you can choose to unlock the 2FA tab with your device's fingerprint,
+                face, or screen lock. The browser and operating system run that check and keep the
+                passkey they create for it; QQR never receives fingerprint, face, or other biometric
+                data. After a successful check, the browser gives QQR a secret tied to that passkey,
+                which QQR uses only to decrypt a second encrypted copy of the vault's data key kept
+                inside the vault. Your password still opens the vault. Turning the option off
+                removes that copy, and you can then delete the passkey in your browser's password
+                manager.
+              </li>
+              <li>
                 <strong>Unlocked key in memory only.</strong> After you unlock the vault, the data
                 key is held only in Chrome's in-memory extension session storage so your codes can
                 be shown without asking again. It is removed when you choose "Lock now". After the
